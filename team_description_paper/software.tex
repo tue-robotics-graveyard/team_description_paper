@@ -8,9 +8,9 @@ An overview of the software used by the Tech United Eindhoven @Home robots can b
     \setlength{\tabcolsep}{5pt}
         \begin{tabular}{p{0.3\textwidth} p{0.7\textwidth}}
         	\toprule
-            Operating system & Ubuntu 12.04 LTS Server\\
+            Operating system & Ubuntu 14.04 LTS Server\\
             
-            Middleware & ROS Hydro\\
+            Middleware & ROS Indigo\\
             
             Low-level software & Orocos Real-Time Toolkit\\
             
@@ -22,13 +22,13 @@ An overview of the software used by the Tech United Eindhoven @Home robots can b
             
             Navigation & Global: custom A* planner\newline Local: modified ROS DWA\\
             
-            Arm navigation & Custom implementation using Orocos KDL\\
+            Arm navigation & Custom implementation using MoveIt and Orocos KDL\\
             
             Object recognition & Combination of size matching (custom), color matching (custom) and Objects-of-Daily-Use Finder \newline \texttt{http://wiki.ros.org/objects\_of\_daily\_use\_finder} \\
             
             People detection & Custom implementation using contour matching \\
-            Face detection & See Section~\ref{sec:perception}\\%OpenCV Face detection\newline\texttt{http://docs.opencv.org/trunk/doc/py\_tutorials/}\newline\texttt{py\_objdetect/py\_face\_detection/py\_face\_detection.html}\\
-            Face recognition & See Section~\ref{sec:perception}\\%OpenCV Face recognition\newline\texttt{http://docs.opencv.org/trunk/modules/contrib/doc/}\newline\texttt{facerec/facerec\_tutorial.html}\\
+            Face detection & ToDo: update\\%OpenCV Face detection\newline\texttt{http://docs.opencv.org/trunk/doc/py\_tutorials/}\newline\texttt{py\_objdetect/py\_face\_detection/py\_face\_detection.html}\\
+            Face recognition & ToDo: update\\%OpenCV Face recognition\newline\texttt{http://docs.opencv.org/trunk/modules/contrib/doc/}\newline\texttt{facerec/facerec\_tutorial.html}\\
             Speech recognition & Dragonfly + Windows Speech Recognition \newline \texttt{http://code.google.com/p/dragonfly/}\\
             Speech synthesis & Philips Text-to-Speech\\
             Task executors & SMACH\newline\texttt{http://wiki.ros.org/smach}\\
