@@ -27,7 +27,7 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{subfigure}
-
+\usepackage{listings}
 
 % *** MORE GRAHPICS ***
 \usepackage[usenames,dvipsnames]{color}     
@@ -77,7 +77,12 @@
 
 \begin{abstract}
 %In your abstract, please state which is the main research line of your team for this year (on which problem or set of problems are you focusing all the team efforts). Tell why this research is important, how are you approaching to the problem solution and which results do you expect to obtain.
-This paper provides an overview of the main developments of the Tech United Eindhoven RoboCup@Home team. ToDo: update. The main research effort of the past year has focused on developing a global, volumetric, object-oriented world model. This world model should replace all world representations that are commonly present in an architecture, e.g., for navigation and manipulation. As a result, these modules can benefit from the additional knowledge that is present in the world model. This world modeling approach is expected to i) make modules such as navigation more robust since these can benefit from the additional knowledge that is present in the world model and ii) reduce the amount of hardcoded knowledge that is commonly present. 
+This paper provides an overview of the main developments of the Tech United Eindhoven RoboCup@Home team. 
+Our main research efforts this year have focused on i) fitting furniture objects to update our object-oriented world model, improving location, navigation and object segmentation ii) developing a WebGUI to provide the user a platform-independent way to interact with the robot and iii) natural language interpretation to ease the specification of commands to the robot and to make speech recognition more robust.
+%	\item Localization, navigation and object segmentation all benefit from the updating the pose of furniture objects by means of a novel fitting algorithm.
+%	\item Interaction with the robots is possible from a large variety of platforms due to the WebGUI.
+%	\item A Natural Language Interpreter allows an easier specification of commands to the robot and a robust speech recognition by excluding meaningless commands from the options that the robot is able to understand.
+%The main research effort of the past year has focused on developing a global, volumetric, object-oriented world model. This world model should replace all world representations that are commonly present in an architecture, e.g., for navigation and manipulation. As a result, these modules can benefit from the additional knowledge that is present in the world model. This world modeling approach is expected to i) make modules such as navigation more robust since these can benefit from the additional knowledge that is present in the world model and ii) reduce the amount of hardcoded knowledge that is commonly present. 
 \end{abstract}
 
 
@@ -85,6 +90,15 @@ This paper provides an overview of the main developments of the Tech United Eind
 
 \section{Introduction}
 \input{introduction.tex}
+
+\section{World Model Furniture Fitting}\label{sec:wmfitting}
+\input{fitting.tex}
+
+\section{WebGUI}\label{sec:webgui}
+\input{webgui.tex}
+ 
+\section{Natural Language Interpretation}\label{sec:nli} 
+\input{nli.tex}
 
 %\section{World Modeling}\label{oo:sec:ed}
 %\input{ed.tex}
@@ -104,11 +118,6 @@ This paper provides an overview of the main developments of the Tech United Eind
 \section*{Robot Software Description}
 \input{software.tex}
 
-\newpage
-\section*{WebGUI}
-\input{webgui.tex}
-
-\vspace{-1.25cm}
 %\section{Introduction}
 %While writing the TDP, please focus on your current research and state clear its scientific contribution value and why it is important for you and the league. The length of the TDP is limited to 8 pages. Please leave the hardware and software description for the end of the paper.
 %
