@@ -1,5 +1,3 @@
-\section{World Model Furniture Fitting} 
-
 To successfully solve a RoboCup@Home challenge, a robot needs a basic understanding of the environment: it needs to know how to get from A to B without colliding, it must be able to detect humans and objects with which it has to interact and it must localize itself with respect to the objects it has to manipulate. Therefore ED (Environment Descriptor), a 3D, object-based, volumetric world model was developed. The datastructures and algorithms used in this world model are described in the 2015 TDP (TODO: ref). More information and tutorials can be found on our Github page \footnote{\texttt{https://github.com/tue-robotics/ed}}.
 
 ED depends on having an accurate description of the world, including locations of walls and furniture. However, tables, chairs and even cabinets may move in a household environment. If the world model is not updated accordingly, two important problems arise in a RoboCup@Home setting:
@@ -10,8 +8,8 @@ ED depends on having an accurate description of the world, including locations o
 \end{itemize}
 
 \begin{figure}[ht]
-        \includegraphics[width = \linewidth]{fitting}
-        \caption{World model furniture fitting algorithm. Top-left: world model visualization as the robot thinks the world is. Top-right: actual situation: the table is rotated and moved. Bottom-left: depth image obtained from the depth sensor (brighter means closer). Bottom-right: top-down projected point cloud (brighter means closer); dividing the points into beams, 2D range data can be extracted and used for efficient template fitting.        
+        \includegraphics[width = \linewidth]{Figures/fitting}
+        \caption{World model furniture fitting algorithm. Top-left: world model visualization as the robot thinks the world is. Top-right: actual situation: the table is rotated and moved. Bottom-left: depth image obtained from the depth sensor (brighter means closer). Bottom-right: top-down projected point cloud (brighter means closer); dividing the points into beams, 2D range data can be extracted and used for efficient template fitting.}
         \label{fig:fitting}
 \end{figure}
 
