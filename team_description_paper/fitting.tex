@@ -1,7 +1,6 @@
-To successfully solve a RoboCup@Home challenge, a robot needs a basic understanding of the environment: it needs to know how to get from A to B without colliding, it must be able to detect humans and objects with which it has to interact and it must localize itself with respect to the objects it has to manipulate. Therefore ED (Environment Descriptor), a 3D, object-based, volumetric world model was developed. The datastructures and algorithms used in this world model are described in the 2015 TDP (TODO: ref). More information and tutorials can be found on our Github page \footnote{\texttt{https://github.com/tue-robotics/ed}}.
+To successfully solve a RoboCup@Home challenge, a robot needs a basic understanding of the environment: it needs to know how to get from A to B without colliding, it must be able to detect humans and objects with which it has to interact and it must localize itself with respect to the objects it has to manipulate. Therefore ED (Environment Descriptor), a 3D, object-based, volumetric world model was developed. The datastructures and algorithms used in this world model are described in the 2015 TDP. More information and tutorials can be found on our Github page\footnote{\texttt{https://github.com/tue-robotics/ed}}.
 
 ED depends on having an accurate description of the world, including locations of walls and furniture. However, tables, chairs and even cabinets may move in a household environment. If the world model is not updated accordingly, two important problems arise in a RoboCup@Home setting:
-
 \begin{itemize}
     \item The robot will not position itself correctly with respect to the furniture (cabinet, table, etc) when it needs to interact with or inspect these entities
     \item Since ED uses background subtraction for object segmentation, segmentation may not work correctly
@@ -14,7 +13,6 @@ ED depends on having an accurate description of the world, including locations o
 \end{figure}
 
 To deal with this, and to get rid of pre-defined location definitions in general, an ED-plugin was developed which can estimate the positions of furniture in the room. This pose estimation algorithm works as follows (also see Figure~\ref{fig:fitting}):
-
 \begin{enumerate}
     \item The camera pose with respect to the floor is obtained using the robot location and forward kinematics
     \item The point cloud obtained from the depth camera is transformed to the robot's base frame using the camera pose
@@ -25,7 +23,6 @@ To deal with this, and to get rid of pre-defined location definitions in general
 \end{enumerate}
 
 The conversion from a 3D point cloud to a 1-dimension range array enables the use of a very efficient fitting algorithm, which allows for constant tracking of entities at high update rates. Do note, however, that the following assumptions are made:
-
 \begin{itemize}
     \item The entity that needs to be fitted is standing on the ground, and is merely translated along the floor plane, and rotated along the vertical axis (only yaw, no roll or pitch)
     \item The entity is not occluded for large parts by other entities
