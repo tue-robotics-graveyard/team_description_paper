@@ -1,0 +1,81 @@
+\usepackage{listings}
+
+\section{Natural Language Interpretation}
+
+Being able to communicate what you want the robot to do is as vital as having it carry out those tasks successfully, and the more natural this communication is, the easier it is to express the actions. For example, typing:
+
+\begin{lstlisting}
+    robot.grasp("drink-123")
+\end{lstlisting}
+
+is more cumbersome than saying or typing:
+
+\begin{lstlisting}
+    robot grab the drink
+\end{lstlisting}
+
+In the first command, you have to know the exact names of the actions the robot can perform. Furthermore, the exact world model identifier of the drink has to be known. If natural language is used, intuition can be used to express the command, without needing further knowledge of the robots internals.
+
+In the Robocup@Home setting, a natural language interpreter is useful for two reasons:
+
+\begin{itemize}
+    \item It is vital for using speech recognition (e.g., for the GPSR challenge)
+    \item Testing basic actions becomes much easier and less cumbersome. The following command allows us to test object segmentation, classification and manipulation: \texttt{"inspect the cabinet and grab the drink"}
+\end{itemize}
+
+
+A natural language interpreter needs to do two things: parse the structure of the sentence (checking syntax), and converting it to a concise representation of its meaning (semantics). This is done using a feature context free grammar (FCFG). Such a grammar represents the possible structure of the command and at the same time explains how the components of this structure add up into a meaning. An example of such an FCFG is the following:
+
+\begin{lstlisting}
+    COMMAND[{"action": A, "entity": X}] -> V[A] NP[X]
+
+    V["inspect"] -> inspect | look at
+    V["grab"] -> pick up | grab       
+    V["navigate-to"] -> go to | navigate to
+
+    NP[X] -> DET N[X]
+
+    NP[{"id", "cabinet-123"}] -> cabinet-123
+    N[{"type": "cabinet"}] -> cabinet
+    N[{"type": "drink"}] -> drink
+
+    DET -> the | a
+\end{lstlisting}
+
+The capitalized terms represent the structure types encountered within a sentence. For example \texttt{'NP'} stands for 'Noun Phrase', \texttt{'DET'} for 'Determinant', \texttt{'V'} for verb. The rule
+
+\begin{lstlisting}
+   A -> B C
+\end{lstlisting}   
+
+means that \texttt{A} can be composed of \texttt{B} and \texttt{C}. A vertical bar '|' means one of the terms can be used. For example, \texttt{DET} can be either 'the' or 'a'. The semantics of the grammar are captured within the square brackets. If a rule applies, the variables on the left hand side are replaced with the content of the variables on the right hand side. For example the sentence:
+
+\begin{lstlisting}
+   pick up a drink
+\end{lstlisting}
+
+will result in the JSON string:
+
+\begin{lstlisting}
+    {"action" : grab, "entity" : {"type": "drink"}}
+\end{lstlisting}
+
+which expresses that an entity of type drink must be picked up. This command can then be send to the action server, which is responsible for executing actions based on structured JSON commands. Notice that the grammar allows for specifying expressive, generic syntax and semantics. It is for example very easy to provide synonyms for verbs.
+
+Aside from it being easy to use, an explicit data model (grammar) for the interpretation of sentences gives us the added advantage that it can also be used for speech recognition. Limiting the amount of options speech recognition can process greatly benefits the recognition quality. By `telling' speech recognition what it should be able to hear, hearing bad sentences or meaningless commands can be avoided. For example, the grammar above can easily be updated such that "grab the cabinet" cannot be parsed, but "inspect the cabinet" is still possible. By providing speech recognition this updated grammar "grab the cabinet" will never accidentally be heard.
+
+Since new objects may be discovered over the course of a challenge, the grammar is dynamically updated at run-time based on input from the world model. This means that if a table is added to the world model, the id and type of this object are also added as rules to the grammar. For example, in such a case the following rules could be added:
+
+\begin{lstlisting}
+    NP[{"id", "table-7"}] -> table-7
+    N[{"type": "table"}] -> table
+\end{lstlisting}    
+    
+Allowing interpretation of commands such as:
+
+\begin{lstlisting}
+    inspect table-7
+    go to the table
+\end{lstlisting}
+
+A natural language console was created which allows typing natural commands to the robot. Using the grammar, tab-completion could easily be integrated into this console.
