@@ -1,3 +1,3 @@
-# team_description_paper
+# Team_description_paper Tech United @ Home
 
-[Compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/tue-robotics/team_description_paper.git&target=Tech_United_At_Home_TDP_2016.tex)
+[![PDF Status](https://www.sharelatex.com/github/repos/tue-robotics/team_description_paper/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/tue-robotics/team_description_paper/builds/latest/output.pdf)
