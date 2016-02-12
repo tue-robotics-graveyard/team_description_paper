@@ -20,7 +20,7 @@ In the RoboCup@Home setting, a natural language interpreter is useful for two re
 \end{itemize}
 
 
-A natural language interpreter needs to do two things: parse the structure of the sentence (checking syntax), and converting it to a concise representation of its meaning (semantics). This is done using a feature context free grammar (FCFG). Such a grammar represents the possible structure of the command and at the same time explains how the components of this structure add up into a meaning. An example of such an FCFG is the following:
+A natural language interpreter needs to do two things: parse the structure of the sentence (checking syntax), and converting it to a concise representation of its meaning (semantics). This is done using a \gls{fcfg}. Such a grammar represents the possible structure of the command and at the same time explains how the components of this structure add up into a meaning. An example of such an \gls{fcfg} is the following:
 
 \begin{lstlisting}
     COMMAND[{"action": A, "entity": X}] -> V[A] NP[X]

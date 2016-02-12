@@ -1,7 +1,7 @@
-To successfully solve a RoboCup@Home challenge, a robot needs a basic understanding of the environment: it needs to know how to get from A to B without colliding, it must be able to detect humans and objects with which it has to interact and it must localize itself with respect to the objects it has to manipulate.
+To successfully perform a RoboCup@Home challenge, a robot needs a basic understanding of the environment: it needs to know how to get from A to B without colliding, it must be able to detect humans and objects with which it has to interact and it must localize itself with respect to the objects it has to manipulate.
 Therefore, \gls{ed}, a 3D, object-based, volumetric world model was developed.
 The datastructures and algorithms used in this world model are described in the 2015 TDP.
-More information and tutorials can be found on our Github page\footnote{\texttt{https://github.com/tue-robotics/ed}}.
+More information and tutorials can be found on our GitHub page\footnote{\texttt{https://github.com/tue-robotics/ed}}.
 
 \gls{ed} depends on having an accurate description of the world, including the locations of walls and furniture.
 However, tables, chairs and even cabinets may move in a household environment.
@@ -17,7 +17,7 @@ If the world model is not updated accordingly, two important problems arise:
         \label{fig:fitting}
 \end{figure}
 
-To deal with this, and to get rid of pre-defined location definitions in general, an \gls{ed}-plugin was developed which can estimate the positions of furniture in the room.
+To deal with this and to get rid of pre-defined location definitions in general, an \gls{ed}-plugin was developed which can estimate the positions of furniture in the room.
 This pose estimation algorithm works as follows (also see Figure~\ref{fig:fitting}):
 \begin{enumerate}
     \item The camera pose with respect to the floor is obtained using the robot location and forward kinematics
