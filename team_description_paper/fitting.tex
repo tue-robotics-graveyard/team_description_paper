@@ -6,6 +6,7 @@ More information and tutorials can be found on our GitHub page\footnote{\texttt{
 \gls{ed} depends on having an accurate description of the world, including the locations of walls and furniture.
 However, tables, chairs and even cabinets may move in a household environment.
 If the world model is not updated accordingly, two important problems arise:
+
 \begin{itemize}
     \item The robot will not position itself correctly with respect to the furniture (cabinet, table, etc) when it needs to interact with or inspect these entities
     \item Since \gls{ed} uses background subtraction for object segmentation, segmentation may not work correctly
@@ -19,6 +20,7 @@ If the world model is not updated accordingly, two important problems arise:
 
 To deal with this and to get rid of pre-defined location definitions in general, an \gls{ed}-plugin was developed which can estimate the positions of furniture in the room.
 This pose estimation algorithm works as follows (also see Figure~\ref{fig:fitting}):
+
 \begin{enumerate}
     \item The camera pose with respect to the floor is obtained using the robot location and forward kinematics
     \item The point cloud obtained from the depth camera is transformed to the robot's base frame using the camera pose
@@ -29,6 +31,7 @@ This pose estimation algorithm works as follows (also see Figure~\ref{fig:fittin
 \end{enumerate}
 
 The conversion from a 3D point cloud to a 1-dimension range array enables the use of a very efficient fitting algorithm, which allows for constant tracking of entities at high update rates. Do note, however, that the following assumptions are made:
+
 \begin{itemize}
     \item The entity that needs to be fitted is standing on the ground, and is merely translated along the floor plane, and rotated along the vertical axis (only yaw, no roll or pitch)
     \item The entity is not occluded for large parts by other entities
