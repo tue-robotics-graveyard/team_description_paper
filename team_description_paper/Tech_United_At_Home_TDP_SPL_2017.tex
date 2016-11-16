@@ -1,0 +1,155 @@
+
+%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the LaTeX source for the TDPTemplate using
+% the LaTeX document class 'llncs.cls' Springer LNAI format
+% used in the RoboCup Symposium submissions.
+% http://www.springer.com/computer/lncs?SGWID=0-164-6-793341-0
+%
+% It may be used as a template for your own TDP - copy it
+% to a new file with a new name and use it as the basis
+% for your Team Description Paper
+%
+% NB: the document class 'llncs' has its own and detailed documentation, see
+% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[runningheads,a4paper]{llncs}
+
+% document input
+\usepackage[utf8]{inputenc}		% input encoding
+\usepackage[english]{babel}		% input language for hyphens
+
+% fonts 
+\usepackage[T1]{fontenc}		% more glyphs and a
+\usepackage{lmodern}			% better looking font
+
+% page geometry
+%\usepackage{a4wide}
+%\usepackage{a4}
+%\usepackage[left=48mm,right=46mm]{geometry}
+\usepackage[left=32mm,right=31mm]{geometry}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\setcounter{tocdepth}{3}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+\usepackage{float}
+
+\usepackage{url}
+\usepackage{listings}
+
+% *** MORE GRAHPICS ***
+\usepackage[usenames,dvipsnames]{color}     
+
+% *** BIBLIOGRAPHY PACKAGES ***
+%\usepackage{natbib}     
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}           % For tables (toprule, midrule, bottomrule)
+\usepackage{todonotes}			% should be defined after the color package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% *** PATHS ***
+\makeatletter
+\def\input@path{{Figures/}		
+				}
+\makeatother
+
+\graphicspath{  {Figures/}
+				}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Acronym definitions
+\usepackage[acronym]{glossaries}
+\newacronym{ed}{ED}{Environment Descriptor}
+\newacronym{amcl}{AMCL}{Adaptive Monte Carlo Localization}
+\newacronym{gui}{GUI}{Graphical User Interface}
+\newacronym{spl}{SPL}{Standard Platform League}
+\newacronym{fcfg}{FCFG}{feature context free grammar}
+\newacronym{ros}{ROS}{Robot Operating System}
+\newacronym{wire}{WIRE}{World Information for Robotic Environments}
+
+% shorthand definitions
+\newcommand{\eg}{\emph{e.g.}}						% Exemplum gratia
+\newcommand{\goal}{\mathcal{G}}						% Goal area
+\newcommand{\goallc}{\mathcal{G}_{\mathrm{lc}}}		% Subset of goal area with costs below threshold cmin
+\newcommand{\goalhc}{\mathcal{G}_{\mathrm{hc}}}		% Subset of goal area with costs above threshold cmin
+\newcommand{\ie}{\emph{i.e.}}						% Id est
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{Tech United Eindhoven @Home \acrshort{spl}\\2017 Team Description Paper}
+\author{J.~Scholtes, J.J.M.~Lunenburg, R.P.W.~Appeldoorn, R.W.J.~Wijnands, T.T.G.~Clephas, M.J.J.~Baeten, L.~van~Beek, R.A.~Ottervanger, L.F.~Bento~Ferreira and M.J.G.~van~de~Molengraft}
+\institute{Eindhoven University of Technology,
+\newline Den Dolech 2, P.O. Box 513, 5600 MB Eindhoven, The Netherlands\\
+\texttt{http://www.techunited.nl, techunited@tue.nl}}
+\authorrunning{J.~Scholtes et al.}
+
+%\author{Team Leader \and Team Members }
+%\institute{[Intitute name and direction here], \\
+%\texttt{http://devoted-web-site.url}}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+This is an abstract
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\input{introduction_spl.tex}
+
+\newpage
+\section{Description of the approach planned to be implemented on the robot}
+This section will explain the methods and software that will be used to solve the RoboCup@Home challenges with the Toyota HSR system.
+
+\subsection{\acrfull{ed}}
+\input{ed.tex}
+
+\subsection{Localization}
+\input{localization.tex}
+
+\subsection{Navigation and Exploration}
+\input{navigation_exploration.tex}
+
+\subsection{Object detection and recognition}
+\input{object_detection_recognition.tex}
+
+\subsection{Object grasping, moving and placing}
+\input{object_grasping_moving.tex}
+
+\subsection{Reasoning}
+\input{reasoning.tex}
+
+\newpage
+\section{List of externally available components that are planned to be implemented}
+\input{software.tex}
+
+\subsection{Innovative technology and scientific contribution}
+\input{innovative_scientific.tex}
+
+\subsection{Focus of research / research interests}
+\input{research_focus.tex}
+
+\subsection{Re-usability of the system for other research groups}
+\input{reusability.tex}
+
+\subsection{Applicability of the approach in the real world}
+\input{applicability_real_world.tex}
+
+
+\end{document} 
