@@ -1,6 +1,10 @@
-# Tech United Eindhoven @Home  
-## Team Description Paper
-### Latest build
-[![PDF Status](https://www.sharelatex.com/github/repos/tue-robotics/team_description_paper/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/tue-robotics/team_description_paper/builds/latest/output.pdf)
-### Build history
-https://www.sharelatex.com/github/repos/tue-robotics/team_description_paper/
+# Team description papers - Tech United Eindhoven
+
+## Team Description Papers @Home
+
+- [Team Description Paper Tech United @Home 2015](https://github.com/tue-robotics/team_description_paper/blob/master/Tech_United_At_Home_TDP_2015.pdf)
+- [Team Description Paper Tech United @Home 2016](https://github.com/tue-robotics/team_description_paper/blob/master/Tech_United_At_Home_TDP_2016.pdf)
+
+## Team Description Papers @Home SPL
+
+- Team Description Paper Tech United @Home SPL 2017 (WIP)
