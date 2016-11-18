@@ -35,6 +35,7 @@
 \usepackage{amsmath}
 \setcounter{tocdepth}{3}
 
+\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -77,6 +78,7 @@
 \newacronym{fcfg}{FCFG}{feature context free grammar}
 \newacronym{ros}{ROS}{Robot Operating System}
 \newacronym{wire}{WIRE}{World Information for Robotic Environments}
+\newacronym{cnn}{CNN}{Convolution Neural Networks}
 
 % shorthand definitions
 \newcommand{\eg}{\emph{e.g.}}						% Exemplum gratia
@@ -93,7 +95,7 @@
 \institute{Eindhoven University of Technology,
 \newline Den Dolech 2, P.O. Box 513, 5600 MB Eindhoven, The Netherlands\\
 \texttt{http://www.techunited.nl, techunited@tue.nl}}
-\authorrunning{M.F.B.~van~der~Burgh et al.}
+\authorrunning{Tech United Eindhoven}
 
 %\author{Team Leader \and Team Members }
 %\institute{[Intitute name and direction here], \\
@@ -104,9 +106,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-This paper describes the research interest and technical approach of the Tech United team towards using the Toyota HSR system for the RoboCup @HOME standard league. Tech United will use an advanced world modelling representation system called the Environment Descriptor (open source) that allows straight forward implementation of localization, navigation, exploration, object detection & recognition, object manipulation and robot-robot cooperation skills. This will yield a fast development to create added functionality for the HSR system and to be used by the open source community. Recently developments are improved object detection via deep learning methods, a generic GUI for different user levels and improved natural language interpretation.
+This paper describes the research interest and technical approach of the Tech United team towards using the Toyota HSR system for the RoboCup @HOME standard league. Tech United will use an advanced world modelling representation system called the Environment Descriptor (open source) that allows straight forward implementation of localization, navigation, exploration, object detection \& recognition, object manipulation and robot-robot cooperation skills. This will yield a fast development to create added functionality for the HSR system and to be used by the open source community. Recently developments are improved object detection via deep learning methods, a generic GUI for different user levels and improved natural language interpretation.
 \end{abstract}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -135,14 +136,14 @@ This section will explain the methods and software that will be used to solve th
 \subsection{Reasoning}
 \input{reasoning.tex}
 
+\subsection{Human-Robot Interface}
+\input{webgui.tex}
+
 \newpage
 \section{List of externally available components that are planned to be implemented}
 \input{software.tex}
 
-\subsection{Innovative technology and scientific contribution}
-\input{innovative_scientific.tex}
-
-\subsection{Focus of research / research interests}
+\subsection{Focus of research and scientific contributions}
 \input{research_focus.tex}
 
 \subsection{Re-usability of the system for other research groups}
@@ -150,6 +151,9 @@ This section will explain the methods and software that will be used to solve th
 
 \subsection{Applicability of the approach in the real world}
 \input{applicability_real_world.tex}
+
+\subsection{Community Outreach and Media}
+\input{community_outreach_media.tex}
 
 \bibliographystyle{unsrt}
 \bibliography{refs}

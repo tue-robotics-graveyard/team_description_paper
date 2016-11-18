@@ -1,3 +1,4 @@
+\subsubsection{Detection \& Segmentation}
 The Environment Descriptor (ED) enables integrating sensor data with use of the plugins present in the ed\_sensor\_integration1 package. Two different plugins do exist:
 1. laser\_plugin: Enables tracking of 2D laser clusters. This plugin can be used to track dynamic obstacles such as humans. 
 2. kinect\_plugin: Enables world model updates with use of Kinect data. This plugin exposes several ROS services that realize different functionalities:
@@ -9,22 +10,17 @@ The ed\_sensor\_integration plugins enable updating and creating entities. Howev
 	\includegraphics[width = \linewidth]{Figures/ed_perception}
 	\label{fig:ed_perception}
 \end{figure}
-In order the classify or train unknown entities, the ed\_perception\footnote{\url{https://github.com/tue-robotics/ed_perception}} plugin exposes ROS Services. The following ROS Services are exposed:
-\begin{enumerate}
-	\item \textbf{AddTrainingInstance.srv} This service adds training data to an ed\_object\_model
-	\item \textbf{Classify.srv} This service tries to classify an unknown entity in the scene. The following classifiers are used
-	\begin{enumerate}
-		\item Size matcher
-		\item SIFT matcher
-		\item Color matcher
-		\item QR detector
-		\item Face detector (face detection / template matching)
-	\end{enumerate}
-	\item \textbf{LearnPerson.srv} Service that learns the face of an entity in the scene
-\end{enumerate}
-For object recognition, the classify service is used. The classify services takes as an argument the id of the entity and returns the classification. This can either be a trained object or person or just the label “human”.
+
+\subsubsection{Recognition using Deep Learning}
+In order the classify or train unknown entities, the ed\_perception\footnote{\url{https://github.com/tue-robotics/ed_perception}} plugin exposes ROS Services to classify the entities in the world model. The ed\_perception module interfaces with various image\_recognition nodes \footnote{\url{https://github.com/tue-robotics/image_recognition}} that apply state of the art image classification techniques based on \acrfull{cnn} \ref{fig:cnn}.
 \begin{figure}[ht]
-	\includegraphics[width = \linewidth]{Figures/ed_perception_people}
-	\label{fig:ed_perception_people}
+	\includegraphics[width = \linewidth]{Figures/cnn}
+	\label{fig:cnn}
 \end{figure}
-In order to create a new training set for specific objects, the ed\_perception package contains several tools for segmenting objects and annotation. 
+Object recognition is done using Tensorflow\footnote{\url{https://www.tensorflow.org/}}: retraining the top-layer of a Inception V3 neural network. The top layers are retrained on a custom dataset using a soft-max top-layer that maps the image representation on a specified set of labels. 
+\\\\
+Face detection and recognition is done using Openface based on Torch. Openface is an existing state-of-the-art face recognition library. We implemented a ROS node that enables the use of these advanced technologies within the ROS network.
+\\\\
+In order to create a new training set for specific objects, the ed\_perception and the image\_recognition packages contains several tools for segmenting and annotating object. Also tools for retraining neural networks are included. 
+\\\\
+Our image recognition ROS packages can be found at \url{https://github.com/tue-robotics/image_recognition} with tutorials and documentation!
