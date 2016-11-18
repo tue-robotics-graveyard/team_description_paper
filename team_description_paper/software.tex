@@ -5,29 +5,29 @@ All our software is developed open-source at GitHub\footnote{\texttt{https://git
     \begin{center}
     \caption{Software overview of the robots.}
     \label{tab:softwarespec}
-    \vspace{-0.25cm}
+    \vspace{-0.1cm}
     \renewcommand{\arraystretch}{1.0}
     \setlength{\tabcolsep}{5pt}
         \begin{tabular}{p{0.3\textwidth} p{0.7\textwidth}}
         	\toprule
             Operating system & Ubuntu 14.04 LTS Server\\
-            
+
             Middleware & ROS Indigo~\cite{Quigley2009}\\
-            
+
             Low-level software & Orocos Real-Time Toolkit~\cite{Bruyninckx2001}\\
-            
+
             World model & \acrfull{ed}, custom \newline \url{https://github.com/tue-robotics/ed}\\
-            
+
             Localization & Monte Carlo~\cite{Fox2003} using \gls{ed}, custom \newline \url{https://github.com/tue-robotics/ed_localization}\\
-            
+
             SLAM & Gmapping: \texttt{http://wiki.ros.org/gmapping}\\
-            
+
             Navigation & Global: custom A* planner\newline Local: modified ROS DWA~\cite{Fox1997}\\
-            
+
             Arm navigation & Custom implementation using MoveIt and Orocos KDL\\
-            
+
             Object recognition & Tensorflow ROS \newline \url{https://github.com/tue-robotics/image_recognition/tree/master/tensorflow_ros} \\
-            
+
             People detection & Custom implementation using contour matching \\
             Face detection \& recognition & Openface ROS \newline \url{https://github.com/tue-robotics/image_recognition/tree/master/openface_ros} \\
             Speech recognition & Dragonfly + Windows Speech Recognition \newline \texttt{http://code.google.com/p/dragonfly/}\\
