@@ -1,7 +1,7 @@
 An overview of the software used by the Tech United Eindhoven @Home robots can be found in Table~\ref{tab:softwarespec}.
-All our software is developed open-source at GitHub\footnote{\texttt{https://github.com/tue-robotics}}
-
-\begin{table}[H]
+All our software is developed open-source at \href{https://github.com/tue-robotics}{GitHub}.
+%\vspace{-0.9cm}
+\begin{table}[h]
     \begin{center}
     \caption{Software overview of the robots.}
     \label{tab:softwarespec}
@@ -12,28 +12,29 @@ All our software is developed open-source at GitHub\footnote{\texttt{https://git
         	\toprule
             Operating system & Ubuntu 14.04 LTS Server\\
 
-            Middleware & ROS Indigo~\cite{Quigley2009}\\
+            Middleware & ROS Indigo \\
 
-            Low-level software & Orocos Real-Time Toolkit~\cite{Bruyninckx2001}\\
+            Low-level software & Orocos Real-Time Toolkit\\
 
-            World model & \acrfull{ed}, custom \newline \url{https://github.com/tue-robotics/ed}\\
+            World model & \href{https://github.com/tue-robotics/ed}{\acrfull{ed}}, custom \\
 
-            Localization & Monte Carlo~\cite{Fox2003} using \gls{ed}, custom \newline \url{https://github.com/tue-robotics/ed_localization}\\
+            Localization & \href{https://github.com/tue-robotics/ed_localization}{Monte Carlo using \gls{ed}}, custom \\
 
             SLAM & Gmapping: \texttt{http://wiki.ros.org/gmapping}\\
 
-            Navigation & Global: custom A* planner\newline Local: modified ROS DWA~\cite{Fox1997}\\
+            Navigation & Global: custom A* planner\newline Local: modified ROS DWA \\
 
             Arm navigation & Custom implementation using MoveIt and Orocos KDL\\
 
-            Object recognition & Tensorflow ROS \newline \url{https://github.com/tue-robotics/image_recognition/tree/master/tensorflow_ros} \\
+            Object recognition & \href{https://github.com/tue-robotics/image_recognition/tree/master/tensorflow_ros}{Tensorflow ROS} \\
 
             People detection & Custom implementation using contour matching \\
-            Face detection \& recognition & Openface ROS \newline \url{https://github.com/tue-robotics/image_recognition/tree/master/openface_ros} \\
-            Speech recognition & Dragonfly + Windows Speech Recognition \newline \texttt{http://code.google.com/p/dragonfly/}\\
+            Face detection \& recognition & \href{https://github.com/tue-robotics/image_recognition/tree/master/openface_ros}{Openface ROS} \\
+            Speech recognition & \href{http://code.google.com/p/dragonfly/}{Dragonfly} + Windows Speech Recognition\\
             Speech synthesis & Philips Text-to-Speech\\
-            Task executors & SMACH\newline\texttt{http://wiki.ros.org/smach}\\
+            Task executors & SMACH \texttt{http://wiki.ros.org/smach}\\
             \bottomrule
         \end{tabular}
     \end{center}
 \end{table}
+%\vspace{-1cm}
