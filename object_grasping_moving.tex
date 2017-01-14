@@ -1,11 +1,11 @@
 As for manipulating objects, the architecture is only focused on grasping. The input is the specific target entity in the world model \acrshort{ed}. The output is the grasp motion, i.e. joint positions for all joints in the kinematic chain over time. Figure \ref{fig:grasping_pipeline} shows the grasping pipeline.
 \begin{figure}[h]
     \centering
-    \vspace{-0.3cm}
+    %\vspace{-0.3cm}
 	\includegraphics[width = 0.9\linewidth]{Figures/grasping_pipeline}
-    \vspace{-1em}
+    %\vspace{-1em}
 	\caption{Grasping pipeline.}
 	\label{fig:grasping_pipeline}
-    \vspace{-0.5cm}
+    %\vspace{-0.5cm}
 \end{figure}
 A python executive queries the current pose of the entity from \acrshort{ed}. The resulting grasp pose goes to the grasp precompute component which makes sure that we approach the object in a proper way. MoveIt will produces joint trajectories over time with use of the current configuration, the URDF model and the final configuration. Note that MoveIt currently does not take any information from \acrshort{ed} into account. Finally, the trajectories are sent to the reference interpolator which sends the trajectories either to the controllers or the simulated robot. 

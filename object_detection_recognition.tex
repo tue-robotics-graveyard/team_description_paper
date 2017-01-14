@@ -8,24 +8,24 @@ b. FitModel: Service that fits the specified model in the sensor data of the Kin
 The ed\_sensor\_integration plugins enable updating and creating entities. However, new entities are classified as unknown entities.
 \begin{figure}[h]
     \centering
-    \vspace{-0.3cm}
+    %\vspace{-0.3cm}
 	\includegraphics[width = 0.9\linewidth]{Figures/ed_perception}
-    \vspace{-1em}
+    %\vspace{-1em}
     \caption{}
 	\label{fig:ed_perception}
-    \vspace{-0.5cm}
+    %\vspace{-0.5cm}
 \end{figure}
 
 \subsubsection{Recognition using Deep Learning}
 In order the classify or train unknown entities, the \href{https://github.com/tue-robotics/ed_perception}{ed\_perception plugin} exposes ROS Services to classify the entities in the world model. The ed\_perception module interfaces with various image\_recognition nodes that apply state of the art image classification techniques based on \acrfull{cnn} \ref{fig:cnn}.
 \begin{figure}[h]
     \centering
-    \vspace{-0.3cm}
+    %\vspace{-0.3cm}
 	\includegraphics[width = 0.9\linewidth]{Figures/cnn}
-    \vspace{-1em}
+    %\vspace{-1em}
     \caption{}
 	\label{fig:cnn}
-    \vspace{-0.5cm}
+    %\vspace{-0.5cm}
 \end{figure}
 Object recognition is done using Tensorflow: retraining the top-layer of a Inception V3 neural network. The top layers are retrained on a custom dataset using a soft-max top-layer that maps the image representation on a specified set of labels.
 \\
