@@ -1,5 +1,7 @@
 An overview of the software used by the Tech United Eindhoven @Home robots can be found in Table~\ref{tab:softwarespec}.
-All our software is developed open-source at GitHub\footnote{\texttt{https://github.com/tue-robotics}}
+All our software is developed open-source at GitHub\footnote{\url{https://github.com/tue-robotics}}.
+\\\newline
+Currently, we have some \textit{image\_recognition} packages released into the current ROS Kinetic distribution and can be installed with use of \textit{apt}. 
 
 \begin{table}[H]
     \begin{center}
@@ -14,31 +16,44 @@ All our software is developed open-source at GitHub\footnote{\texttt{https://git
 
             Middleware & ROS Kinetic~\cite{Quigley2009}\\
 
-            Low-level software & Orocos Real-Time Toolkit~\cite{Bruyninckx2001}\\
+            Low-level control software & Orocos Real-Time Toolkit~\cite{Bruyninckx2001}\newline
+            \url{https://github.com/tue-robotics/rtt_control_components}
+            \\
+            
+            Simulation & Custom kinematics + sensor simulator \newline
+            \url{https://github.com/tue-robotics/fast_simulator}
+            \\
 
             World model & \acrfull{ed}, custom \newline
-            \texttt{https://github.com/tue-robotics/ed}\\
+            \url{https://github.com/tue-robotics/ed}\\
 
-            Localization & Monte Carlo~\cite{Fox2003} using \gls{ed}, custom \newline \texttt{https://github.com/tue-robotics/ed\_localization}\\
+            Localization & Monte Carlo~\cite{Fox2003} using \gls{ed}, custom \newline \url{https://github.com/tue-robotics/ed\_localization}\\
 
-            SLAM & Gmapping: \texttt{http://wiki.ros.org/gmapping}\\
+            SLAM & Gmapping package \newline \url{http://wiki.ros.org/gmapping}\\
 
-            Navigation & Global: custom A* planner\newline Local: modified ROS DWA~\cite{Fox1997}\\
+            Navigation & CB Base navigation
+            \newline
+            \url{https://github.com/tue-robotics/cb_base_navigation}
+            \newline
+            Global: custom A* planner\newline Local: modified ROS DWA~\cite{Fox1997}\\
 
-            Arm navigation & Custom implementation using MoveIt and Orocos KDL\\
+            Arm navigation & Custom implementation using MoveIt and Orocos KDL\newline
+            \url{https://github.com/tue-robotics/tue_manipulation}
+            \\
             
             Object recognition & Tensorflow ROS \newline
-            \texttt{apt-get install ros-kinetic-tensorflow-ros}
-            \texttt{https://github.com/tue-robotics/image\_recognition/tree/master/tensorflow\_ros}\\
+			\url{https://github.com/tue-robotics/image\_recognition/tree/master/tensorflow\_ros}\\
             
-            People detection & Custom implementation using contour matching \\
-            Face detection \& recognition & Openface ROS \newline \texttt{https://github.com/tue-robotics/image\_recognition/tree/master/openface\_ros} \\
+            People detection & Custom implementation using contour matching \newline
+            \url{https://github.com/tue-robotics/ed_perception}
+            \\
+            Face detection \& recognition & Openface ROS \newline \url{https://github.com/tue-robotics/image\_recognition/tree/master/openface\_ros} \\
 
             Speech recognition & Dragonfly + Windows Speech Recognition \newline
-            \texttt{http://code.google.com/p/dragonfly/}\\
+            \url{https://github.com/tue-robotics/dragonfly_speech_recognition}\\
             Speech synthesis & Philips Text-to-Speech\\
             Task executors & SMACH \newline
-            \texttt{http://wiki.ros.org/smach}\\
+            \url{https://github.com/tue-robotics/tue_robocup}\\
             \bottomrule
         \end{tabular}
     \end{center}
