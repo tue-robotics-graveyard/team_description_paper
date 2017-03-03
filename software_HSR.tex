@@ -1,0 +1,62 @@
+An overview of the software used by the Tech United Eindhoven @Home robots can be found in Table~\ref{tab:softwarespec}.
+All our software is developed open-source at GitHub\footnote{\url{https://github.com/tue-robotics}}.
+\\\newline
+Currently, we have some \textit{image\_recognition} packages released into the current ROS Kinetic distribution and can be installed with use of \textit{apt}.
+
+\begin{table}[H]
+    \begin{center}
+    \caption{Software overview of the robots.}
+    \label{tab:softwarespec}
+    %\vspace{-0.1cm}
+    \renewcommand{\arraystretch}{1.0}
+    \setlength{\tabcolsep}{5pt}
+        \begin{tabular}{p{0.3\textwidth} p{0.7\textwidth}}
+            \toprule
+            Operating system & Ubuntu 16.04 LTS Server\\
+
+            Middleware & ROS Kinetic~\cite{Quigley2009}\\
+
+            Low-level control software & Orocos Real-Time Toolkit~\cite{Bruyninckx2001}\newline
+            \url{https://github.com/tue-robotics/rtt_control_components}
+            \\
+
+            Simulation & Custom kinematics + sensor simulator \newline
+            \url{https://github.com/tue-robotics/fast_simulator}
+            \\
+
+            World model & \acrfull{ed}, custom \newline
+            \url{https://github.com/tue-robotics/ed}\\
+
+            Localization & Monte Carlo~\cite{Fox2003} using \gls{ed}, custom \newline \url{https://github.com/tue-robotics/ed\_localization}\\
+
+            SLAM & Gmapping package \newline \url{http://wiki.ros.org/gmapping}\\
+
+            Navigation & CB Base navigation
+            \newline
+            \url{https://github.com/tue-robotics/cb_base_navigation}
+            \newline
+            Global: custom A* planner\newline Local: modified ROS DWA~\cite{Fox1997}\\
+
+            Arm navigation & Custom implementation using MoveIt and Orocos KDL\newline
+            \url{https://github.com/tue-robotics/tue_manipulation}
+            \\
+
+            Object recognition & Tensorflow ROS \newline
+			\url{https://github.com/tue-robotics/image\_recognition/tree/master/tensorflow\_ros}\\
+
+            People detection & Custom implementation using contour matching \newline
+            \url{https://github.com/tue-robotics/ed_perception}
+            \\
+            Face detection \& recognition & Openface ROS \newline \url{https://github.com/tue-robotics/image\_recognition/tree/master/openface\_ros} \\
+
+            Speech recognition & Dragonfly + Windows Speech Recognition \newline
+            \url{https://github.com/tue-robotics/dragonfly_speech_recognition}\\
+            Speech synthesis & Philips Text-to-Speech\\
+            Task executors & SMACH \newline
+            \url{https://github.com/tue-robotics/tue_robocup}\\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{table}
+
+This our current software implementation on our robots AMIGO and SERGIO, which participate in the open league. Because of the pending delivery of the Toyota HSR and related documentation, we are not able to provide the specific software implementation. As described in our selection qualification paper, our goal is to use the same software as possible on all our robots, including the Toyota HSR.
