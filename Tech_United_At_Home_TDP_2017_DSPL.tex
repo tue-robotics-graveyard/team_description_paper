@@ -45,6 +45,7 @@
 
 \usepackage{url}
 \usepackage{listings}
+\usepackage{enumitem}
 
 % *** MORE GRAHPICS ***
 \usepackage[usenames,dvipsnames]{color}
@@ -115,29 +116,33 @@ This paper provides an overview of the main developments of the Tech United Eind
 \section{Introduction}
 \input{introduction.tex}
 
-\subsection{\acrfull{ed}}
+\section{\acrfull{ed}}
 \input{ed.tex}
 
 \subsection{Localization, Navigation and Exploration}
 \input{navigation_exploration.tex}
 
-\subsection{Object detection and recognition}
-\input{object_detection_recognition.tex}
+\subsection{Object detection}
+\input{object_detection.tex}
 
 \subsection{Object grasping, moving and placing}
 \input{object_grasping_moving.tex}
 
-\subsection{Reasoning}
-\input{reasoning.tex}
+\section{Image Recognition}
+\input{object_recognition.tex}
 
-\newpage
-\subsection{Human-Robot Interface}
+%\subsection{Reasoning}
+%\input{reasoning.tex}
+
+%\newpage
+\section{Human-Robot Interface}
 \input{webgui.tex}
 
-\section*{Robot Hardware Descriptions}
+\section{Robot Descriptions}
+\subsection{Robot Hardware Descriptions}
 \input{hardware_HSR.tex}
 
-\section*{Robot Software Description}
+\subsection{Robot Software Description}
 \input{software_HSR.tex}
 
 \subsection{Re-usability of the system for other research groups}
